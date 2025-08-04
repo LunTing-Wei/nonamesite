@@ -18,15 +18,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.http import HttpResponse
-from django.shortcuts import render
-
-
-def about(req):
-    return render(req, "about.html")
-
-
-def Home(req):
-    return render(req, "Home.html")
+from .views import about, Home
 
 
 urlpatterns = [path("admin/", admin.site.urls), path("about/", about), path("", Home)]
